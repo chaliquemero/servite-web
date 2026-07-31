@@ -391,22 +391,9 @@ section.dark {
   letter-spacing: -0.3px;
 }
 
-.modos-grid .phone-showcase {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 24px;
-}
+.modos-grid .phone-showcase { grid-template-columns: 260px 1fr; gap: 20px; align-items: center; }
 .modos-grid .phone { width: 250px; }
-.modos-grid .msteps { width: 100%; flex-direction: row; align-items: stretch; gap: 12px; }
-.modos-grid .mstep { flex: 1 1 0; min-width: 0; }
-.modos-grid .qr-grid {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 24px;
-}
-.modos-grid .qr-steps { width: 100%; grid-template-columns: repeat(3, 1fr); gap: 12px; }
+.modos-grid .qr-grid { grid-template-columns: 240px 1fr; gap: 20px; align-items: center; }
 
 .modos-grid .qr-step {
   background: rgba(255,255,255,0.04);
@@ -1578,8 +1565,8 @@ footer p strong { color: #fff; letter-spacing: 0.5px; }
   .hero-inner { grid-template-columns: 1fr; gap: 44px; }
   .hero-visual { gap: 24px; }
   .modos-grid { grid-template-columns: 1fr; gap: 32px; }
-  .modos-grid .phone-showcase { gap: 28px; }
-  .modos-grid .qr-grid { gap: 28px; }
+  .modos-grid .phone-showcase { grid-template-columns: 320px 1fr; gap: 44px; }
+  .modos-grid .qr-grid { grid-template-columns: 0.9fr 1.1fr; gap: 48px; }
 }
 
 @media (max-width: 768px) {
@@ -1667,11 +1654,8 @@ footer p strong { color: #fff; letter-spacing: 0.5px; }
   .gal-grid { grid-template-columns: 1fr 1fr; }
   .modos-grid { gap: 24px; }
   .modo-col { padding: 26px 20px; }
-  .modos-grid .phone-showcase { gap: 24px; }
-  .modos-grid .qr-grid { gap: 24px; }
-  .modos-grid .msteps { flex-wrap: wrap; }
-  .modos-grid .mstep { flex: 1 1 calc(50% - 12px); }
-  .modos-grid .qr-steps { grid-template-columns: 1fr; }
+  .modos-grid .phone-showcase { grid-template-columns: 1fr; gap: 32px; }
+  .modos-grid .qr-grid { grid-template-columns: 1fr; gap: 32px; }
 
   .contact-form { padding: 28px 22px; }
 
@@ -1734,7 +1718,6 @@ footer p strong { color: #fff; letter-spacing: 0.5px; }
 
   .nfc-note { flex-direction: column; text-align: center; padding: 22px 18px; }
   .modo-col { padding: 20px 16px; }
-  .modos-grid .mstep { flex: 1 1 100%; }
 
   .contact-alt .btn-whatsapp { width: 100%; }
 
