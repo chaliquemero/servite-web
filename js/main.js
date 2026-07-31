@@ -12,6 +12,17 @@
   /* Año dinámico */
   if (yearEl) yearEl.textContent = new Date().getFullYear();
 
+  /* Volver arriba */
+  var toTop = document.getElementById('toTop');
+  if (toTop) {
+    window.addEventListener('scroll', function () {
+      toTop.classList.toggle('visible', window.scrollY > 500);
+    }, { passive: true });
+    toTop.addEventListener('click', function () {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+  }
+
   /* Nav: sombra al hacer scroll */
   window.addEventListener('scroll', function () {
     if (nav) nav.classList.toggle('scrolled', window.scrollY > 10);
@@ -120,6 +131,18 @@
     phoneWrap.addEventListener('mouseleave', start);
     phoneWrap.addEventListener('touchstart', stop, { passive: true });
     phoneWrap.addEventListener('touchend', start);
+
+    /* Swipe horizontal para cambiar de pantalla en móvil */
+    var touchX = null;
+    phoneWrap.addEventListener('touchstart', function (e) {
+      touchX = e.changedTouches[0].clientX;
+    }, { passive: true });
+    phoneWrap.addEventListener('touchend', function (e) {
+      if (touchX === null) return;
+      var dx = e.changedTouches[0].clientX - touchX;
+      touchX = null;
+      if (Math.abs(dx) > 40) { go(idx + (dx < 0 ? 1 : -1)); start(); }
+    }, { passive: true });
   }
 
   if (screens.length) start();
