@@ -1,0 +1,624 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SERVITE — Self-Service Beverage System | Sin filas, sin esperas</title>
+<meta name="description" content="SERVITE combina canillas inteligentes con una plataforma digital para que los asistentes a tu evento se sirvan de forma autónoma: saldo por mililitros con app y NFC, o QR de medida fija.">
+<meta property="og:title" content="SERVITE — Self-Service Beverage System">
+<meta property="og:description" content="Canillas inteligentes + plataforma digital. Sin filas, sin esperas, sin fricción. Para eventos, bares y locales.">
+<meta property="og:type" content="website">
+<meta property="og:image" content="img/Logotipo_Positivo.png">
+<meta property="og:locale" content="es_AR">
+<meta name="twitter:card" content="summary">
+<link rel="icon" type="image/png" href="img/Logotipo_Positivo.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- ===== NAV ===== -->
+  <nav id="navbar">
+    <a href="#inicio" class="logo" aria-label="SERVITE — inicio">
+      <img src="img/Logotipo_Negativo.png" alt="SERVITE">
+      <span>Self-Service Beverage System</span>
+    </a>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="#app">La App</a></li>
+      <li><a href="#qr">QR</a></li>
+      <li><a href="#barra">La Barra</a></li>
+      <li><a href="#precios">Precios</a></li>
+      <li><a href="#faq">FAQ</a></li>
+      <li><a href="#contacto" class="nav-cta">Contacto</a></li>
+    </ul>
+    <button class="hamburger" id="hamburger" aria-label="Abrir menú" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+  </nav>
+
+  <!-- ===== HERO ===== -->
+  <header class="hero" id="inicio">
+    <div class="hero-inner">
+      <div class="hero-copy">
+        <img src="img/Logotipo_Negativo.png" alt="SERVITE" class="hero-logo reveal">
+        <p class="hero-tagline reveal">Self-Service Beverage System</p>
+        <div class="hero-line reveal"></div>
+        <h1 class="hero-title reveal">Servite solo.<br>Sin filas, sin esperas, <span>sin fricción.</span></h1>
+        <p class="hero-sub reveal">
+          Canillas inteligentes conectadas a una plataforma digital: cargá saldo y servite por mililitros
+          con la app o tu tarjeta NFC, o escaneá el QR y llevate una medida fija al instante.
+        </p>
+        <div class="hero-actions reveal">
+          <a href="#contacto" class="btn btn-primary">Quiero SERVITE en mi evento</a>
+          <a href="#app" class="btn btn-ghost">Ver cómo se usa</a>
+        </div>
+        <div class="hero-meta reveal">
+          <div class="hero-meta-item"><strong>Modelo</strong>B2B2C &middot; SaaS &middot; IoT</div>
+          <div class="hero-meta-item"><strong>Para</strong>Eventos &middot; Bares &middot; Locales</div>
+          <div class="hero-meta-item"><strong>Pagos</strong>App &middot; NFC &middot; QR</div>
+        </div>
+      </div>
+
+      <div class="hero-visual reveal">
+        <div class="phone hero-phone">
+          <div class="phone-notch"></div>
+          <div class="phone-screen">
+            <div class="screen active">
+              <div class="screen-top">
+                <div class="screen-brand">
+                  <img src="img/Logotipo_Positivo.png" alt="Servite">
+                  <span>Servite</span>
+                </div>
+                <span class="screen-saldo">$5.000</span>
+              </div>
+              <div class="screen-body">
+                <div class="serve-ring"><b>400</b><span>ml</span></div>
+                <h4>Canilla 03 activa</h4>
+                <p>Servite hasta tu saldo o hasta donde quieras.</p>
+                <div class="screen-btn">Servir</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="tap-rig" aria-label="Animación de canilla inteligente SERVITE">
+          <div class="tap-screen">
+            <div class="tap-screen-row"><span>Canilla 03</span><span class="ts-val" id="tapMl">000</span><span>ml</span></div>
+            <div class="tap-screen-row"><span>Costo</span><span class="ts-val pay" id="tapPrice">$0</span></div>
+            <div class="tap-screen-status" id="tapStatus">Lista</div>
+          </div>
+          <div class="tap-unit">
+            <div class="tap-head"></div>
+            <div class="tap-handle"></div>
+            <div class="tap-neck"></div>
+            <div class="tap-spout"></div>
+            <div class="tap-stream" id="tapStream"></div>
+            <div class="tap-glass"><div class="tap-liquid" id="tapLiquid"></div></div>
+            <div class="tap-base"></div>
+          </div>
+        </div>
+
+        <div class="float-card fc-1"><span class="fc-label">Saldo</span>$5.000</div>
+        <div class="float-card fc-2"><span class="fc-label">Servido</span>400 ml &middot; <b>-$2.500</b></div>
+      </div>
+    </div>
+  </header>
+
+  <!-- ===== STATS ===== -->
+  <section class="stats" aria-label="Cifras clave">
+    <div class="container stats-grid">
+      <div class="stat reveal">
+        <div class="stat-num">&lt;90s</div>
+        <div class="stat-label">registro y primera carga de saldo</div>
+      </div>
+      <div class="stat reveal">
+        <div class="stat-num">0</div>
+        <div class="stat-label">filas en la barra</div>
+      </div>
+      <div class="stat reveal">
+        <div class="stat-num">2</div>
+        <div class="stat-label">modos: saldo por ml y medida fija</div>
+      </div>
+      <div class="stat reveal">
+        <div class="stat-num">100%</div>
+        <div class="stat-label">control y métricas en tiempo real</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== LA APP (SALDO POR ML) ===== -->
+  <section id="app" class="dark">
+    <div class="container">
+      <div class="section-header reveal">
+        <span class="section-number light">01</span>
+        <div class="section-header-bar light"></div>
+      </div>
+      <h2 class="section-title light reveal">La app: <span class="accent">saldo por mililitros</span></h2>
+      <p class="section-sub light reveal">Cargá saldo, elegí canilla y servite hasta donde te alcance.</p>
+
+      <div class="phone-showcase">
+        <div class="phone-wrap reveal">
+          <div class="phone">
+            <div class="phone-notch"></div>
+            <div class="phone-screen">
+
+              <!-- Paso 1: Cargá saldo -->
+              <div class="screen active">
+                <div class="screen-top">
+                  <div class="screen-brand">
+                    <img src="img/Logotipo_Positivo.png" alt="Servite">
+                    <span>Servite</span>
+                  </div>
+                  <span class="screen-saldo">$0</span>
+                </div>
+                <div class="screen-body">
+                  <div class="screen-icon">
+                    <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                      <rect x="2" y="5" width="20" height="14" rx="2"/><path d="M2 10h20"/><path d="M6 15h4"/>
+                    </svg>
+                  </div>
+                  <h4>Cargá saldo</h4>
+                  <p>Elegí cuánto cargar. Una sola vez en la noche.</p>
+                  <div class="chips">
+                    <span class="chip on">$2.000</span>
+                    <span class="chip">$5.000</span>
+                    <span class="chip">$10.000</span>
+                  </div>
+                  <div class="screen-btn ghost">Cargar con tarjeta</div>
+                </div>
+              </div>
+
+              <!-- Paso 2: Seleccioná canilla -->
+              <div class="screen">
+                <div class="screen-top">
+                  <div class="screen-brand">
+                    <img src="img/Logotipo_Positivo.png" alt="Servite">
+                    <span>Servite</span>
+                  </div>
+                  <span class="screen-saldo">$5.000</span>
+                </div>
+                <div class="screen-body">
+                  <h4 style="align-self:flex-start">Elegí canilla</h4>
+                  <div class="canilla-list">
+                    <div class="canilla-row on"><span>Chopp IPA</span><span class="cr-ml">400 ml · <b>$2.500</b></span></div>
+                    <div class="canilla-row"><span>Coca-Cola</span><span class="cr-ml">350 ml · <b>$1.200</b></span></div>
+                    <div class="canilla-row"><span>Agua mineral</span><span class="cr-ml">500 ml · <b>$900</b></span></div>
+                  </div>
+                  <div class="screen-btn">Seleccionar</div>
+                </div>
+              </div>
+
+              <!-- Paso 3: Servite -->
+              <div class="screen">
+                <div class="screen-top">
+                  <div class="screen-brand">
+                    <img src="img/Logotipo_Positivo.png" alt="Servite">
+                    <span>Servite</span>
+                  </div>
+                  <span class="screen-saldo">$5.000</span>
+                </div>
+                <div class="screen-body">
+                  <div class="serve-ring"><b>400</b><span>ml</span></div>
+                  <h4>Servite</h4>
+                  <p class="ml-readout">Hasta tu saldo o hasta donde quieras.</p>
+                  <div class="screen-btn">Servir</div>
+                </div>
+              </div>
+
+              <!-- Paso 4: Consumo en tiempo real -->
+              <div class="screen">
+                <div class="screen-top">
+                  <div class="screen-brand">
+                    <img src="img/Logotipo_Positivo.png" alt="Servite">
+                    <span>Servite</span>
+                  </div>
+                  <span class="screen-saldo">$1.400</span>
+                </div>
+                <div class="screen-body">
+                  <h4 style="align-self:flex-start">Mis consumos</h4>
+                  <div class="consumo-list">
+                    <div class="consumo-row"><span>Chopp 400 ml</span><span>-$2.500</span></div>
+                    <div class="consumo-row"><span>Coca 350 ml</span><span>-$1.200</span></div>
+                    <div class="consumo-row"><span>Agua 500 ml</span><span>-$900</span></div>
+                  </div>
+                  <div class="consumo-total"><span>Saldo restante</span><span>$1.400</span></div>
+                </div>
+              </div>
+
+            </div>
+          </div>
+        </div>
+
+        <div class="msteps reveal">
+          <button class="mstep active" data-step="0">
+            <b>1</b>
+            <div>
+              <h4>Cargá saldo</h4>
+              <p>Monto único en menos de 90 segundos, con tarjeta de crédito o billetera digital.</p>
+            </div>
+          </button>
+          <button class="mstep" data-step="1">
+            <b>2</b>
+            <div>
+              <h4>Seleccioná canilla</h4>
+              <p>Elegí qué tomar: chopp, gaseosa o agua. Cada canilla tiene su medida y su precio.</p>
+            </div>
+          </button>
+          <button class="mstep" data-step="2">
+            <b>3</b>
+            <div>
+              <h4>Servite por mililitros</h4>
+              <p>Despachá lo que quieras, hasta el límite de tu saldo. La canilla mide cada mililitro.</p>
+            </div>
+          </button>
+          <button class="mstep" data-step="3">
+            <b>4</b>
+            <div>
+              <h4>Seguí tu consumo</h4>
+              <p>Historial y saldo en tiempo real. Sin vueltos, sin sorpresas.</p>
+            </div>
+          </button>
+        </div>
+      </div>
+
+      <div class="nfc-note reveal">
+        <span class="nfc-icon">
+          <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+            <path d="M6 8a10 10 0 0 1 0 8"/><path d="M10 6a14 14 0 0 1 0 12" opacity=".7"/><path d="M14 4a18 18 0 0 1 0 16" opacity=".45"/>
+          </svg>
+        </span>
+        <div>
+          <h3>NFC: la misma experiencia, sin celular</h3>
+          <p>¿No querés usar la app? Apoyá tu tarjeta NFC en la barra y tenés el mismo saldo por mililitros: cargá saldo, servite y controlá el consumo al instante.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== QR (MEDIDA FIJA) ===== -->
+  <section id="qr">
+    <div class="container">
+      <div class="section-header reveal">
+        <span class="section-number">02</span>
+        <div class="section-header-bar"></div>
+      </div>
+      <h2 class="section-title reveal">QR: <span class="accent">medida fija</span></h2>
+      <p class="section-sub reveal">Escaneás, pagás y te libera exactamente esa medida. Sin registros, sin saldo, sin app.</p>
+
+      <div class="qr-grid">
+        <div class="qr-visual reveal">
+          <div class="qr-card">
+            <div class="qr-card-top"><span>Canilla 04</span><b>Medida fija &middot; 400 ml</b></div>
+            <div class="qr-pattern" id="qrPattern" aria-hidden="true"></div>
+            <div class="qr-card-bottom">
+              <span class="qr-price">$2.500</span>
+              <span class="qr-cta">Pagar y servir</span>
+            </div>
+          </div>
+        </div>
+        <div class="qr-steps reveal">
+          <div class="qr-step">
+            <b>1</b>
+            <div>
+              <h3>Escaneá el QR</h3>
+              <p>Cada QR corresponde a una canilla y a una medida fija: por ejemplo, 400 ml de chopp.</p>
+            </div>
+          </div>
+          <div class="qr-step">
+            <b>2</b>
+            <div>
+              <h3>Pagás al instante</h3>
+              <p>Cobro directo con tarjeta de crédito o billetera digital. Sin registros ni saldo previo.</p>
+            </div>
+          </div>
+          <div class="qr-step">
+            <b>3</b>
+            <div>
+              <h3>Servís esa medida</h3>
+              <p>La canilla se habilita por única vez: despachás exactamente la medida que pagaste y se bloquea.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== LA BARRA ===== -->
+  <section id="barra" class="dark">
+    <div class="container">
+      <div class="section-header reveal">
+        <span class="section-number light">03</span>
+        <div class="section-header-bar light"></div>
+      </div>
+      <h2 class="section-title light reveal">La barra, <span class="accent">reinventada</span></h2>
+      <p class="section-sub light reveal">Módulos de canillas inteligentes que se integran a tu operación en horas.</p>
+
+      <div class="barra-grid">
+        <div class="barra-photos reveal">
+          <div class="photo" data-label="Foto — La barra SERVITE en un evento">
+            <img src="img/eventos/barra-01.jpg" alt="La barra SERVITE en acción durante un evento">
+          </div>
+          <div class="photo" data-label="Foto — Módulo de canillas inteligentes">
+            <img src="img/eventos/barra-02.jpg" alt="Módulo de canillas inteligentes SERVITE">
+          </div>
+        </div>
+        <div class="reveal">
+          <ul class="barra-list">
+            <li><strong>Canillas inteligentes</strong> que miden cada servicio en mililitros.</li>
+            <li><strong>Identificación en el puesto</strong> por NFC, QR o app, sin personal de despacho.</li>
+            <li><strong>Módulos portátiles</strong>: instalación en horas, listos para el día del evento.</li>
+            <li><strong>Resistencia pensada para el uso intensivo</strong> de un evento masivo.</li>
+            <li><strong>Integración total</strong> con el panel de gestión del organizador.</li>
+          </ul>
+          <div class="pitch-box reveal" style="margin-top:24px">
+            <h3>Métricas que mandan</h3>
+            <p>Litros servidos, picos de demanda, productos más vendidos y saldo promedio por asistente: todo en tiempo real, sin cuadernos ni proyecciones a ojo.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== GALERÍA ===== -->
+  <section id="galeria">
+    <div class="container">
+      <div class="section-header reveal">
+        <span class="section-number">04</span>
+        <div class="section-header-bar"></div>
+      </div>
+      <h2 class="section-title reveal">SERVITE <span class="accent">en acción</span></h2>
+      <p class="section-sub reveal">Así se vive la experiencia en eventos reales.</p>
+
+      <div class="gal-grid">
+        <div class="photo reveal" data-label="Foto 01 — Evento en acción">
+          <img src="img/eventos/galeria-01.jpg" alt="Evento con SERVITE en acción">
+        </div>
+        <div class="photo reveal" data-label="Foto 02 — Asistentes sirviéndose">
+          <img src="img/eventos/galeria-02.jpg" alt="Asistentes sirviéndose con SERVITE">
+        </div>
+        <div class="photo reveal" data-label="Foto 03 — La app en el evento">
+          <img src="img/eventos/galeria-03.jpg" alt="Uso de la app SERVITE durante el evento">
+        </div>
+        <div class="photo reveal" data-label="Foto 04 — La barra de noche">
+          <img src="img/eventos/galeria-04.jpg" alt="La barra SERVITE durante la noche">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== BENEFICIOS ===== -->
+  <section id="beneficios" class="dark">
+    <div class="container">
+      <div class="section-header reveal">
+        <span class="section-number light">05</span>
+        <div class="section-header-bar light"></div>
+      </div>
+      <h2 class="section-title light reveal">Beneficios que se <span class="accent">sienten en la caja</span></h2>
+      <p class="section-sub light reveal">Para el organizador, para el bar y para quien asiste.</p>
+
+      <div class="bene-grid">
+        <div class="bene-card reveal">
+          <h3>Más velocidad de atención</h3>
+          <p>Automatizá el despacho de bebidas y multiplicá los puntos de venta sin sumar personal de barra.</p>
+        </div>
+        <div class="bene-card reveal">
+          <h3>Control total del consumo</h3>
+          <p>Métricas en tiempo real: qué se vende, cuánto y a qué hora. Sabés exactamente qué pasa en tu barra.</p>
+        </div>
+        <div class="bene-card reveal">
+          <h3>Menos costos operativos</h3>
+          <p>Reducí la dotación de barra y los errores de caja. El sistema registra cada servicio automáticamente.</p>
+        </div>
+        <div class="bene-card reveal">
+          <h3>Pagos sin fricción</h3>
+          <p>App, NFC, QR o tarjeta: todos los medios posibles, sin efectivo y sin pérdidas de venta.</p>
+        </div>
+        <div class="bene-card reveal">
+          <h3>Experiencia que fideliza</h3>
+          <p>El asistente vuelve a un evento donde no hizo fila para servirse. La experiencia es el marketing.</p>
+        </div>
+        <div class="bene-card reveal">
+          <h3>Escalable a cualquier evento</h3>
+          <p>De una fiesta privada a un festival masivo. La infraestructura se adapta a la demanda real.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== PRECIOS ===== -->
+  <section id="precios">
+    <div class="container">
+      <div class="section-header reveal">
+        <span class="section-number">06</span>
+        <div class="section-header-bar"></div>
+      </div>
+      <h2 class="section-title reveal">Planes <span class="accent">flexibles, precios a medida</span></h2>
+      <p class="section-sub reveal">Combiná los componentes del modelo según tu operación.</p>
+
+      <div class="price-grid">
+        <div class="price-card reveal">
+          <span class="price-tag">Evento único</span>
+          <h3>Alquiler por evento</h3>
+          <p class="price-desc">Para fiestas, bodas y eventos privados puntuales. Sin permanencia.</p>
+          <ul>
+            <li>QR de medida fija listo en minutos</li>
+            <li>App + NFC opcionales para saldo por ml</li>
+            <li>Fee de instalación</li>
+            <li>Alquiler de módulos de canillas</li>
+            <li>Porcentaje sobre consumo</li>
+          </ul>
+          <a href="#contacto" class="btn btn-ghost-dark">Consultar cotización</a>
+        </div>
+        <div class="price-card featured reveal">
+          <span class="price-tag">Más elegido</span>
+          <h3>Bar / Local</h3>
+          <p class="price-desc">Para bares y locales que quieren vender más con menos barra.</p>
+          <ul>
+            <li>Ambos modos: saldo por ml y medida fija</li>
+            <li>Tarifa base mensual</li>
+            <li>Panel de métricas en tiempo real</li>
+            <li>Porcentaje sobre consumo</li>
+          </ul>
+          <a href="#contacto" class="btn btn-primary">Hablar con ventas</a>
+        </div>
+        <div class="price-card reveal">
+          <span class="price-tag">A gran escala</span>
+          <h3>Festival / Temporada</h3>
+          <p class="price-desc">Para organizadores con eventos recurrentes o múltiples fechas.</p>
+          <ul>
+            <li>Flota de módulos a medida</li>
+            <li>Ambos modos de consumo</li>
+            <li>Tarifa base preferencial</li>
+            <li>Soporte dedicado en cada fecha</li>
+          </ul>
+          <a href="#contacto" class="btn btn-ghost-dark">Armar plan a medida</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== FAQ ===== -->
+  <section id="faq" class="dark">
+    <div class="container container-narrow">
+      <div class="section-header reveal">
+        <span class="section-number light">07</span>
+        <div class="section-header-bar light"></div>
+      </div>
+      <h2 class="section-title light reveal">Preguntas <span class="accent">frecuentes</span></h2>
+      <p class="section-sub light reveal">Las dudas que nos hacen todos los organizadores.</p>
+
+      <div class="faq-list">
+        <div class="faq-item reveal">
+          <button class="faq-q" aria-expanded="false">
+            ¿El asistente necesita descargar una app?
+            <span class="faq-icon"></span>
+          </button>
+          <div class="faq-a">
+            <p>Depende del modo elegido. Con QR de medida fija no: se escanea, se sirve y se cobra directo. Con saldo por mililitros sí se usa la app, o una tarjeta NFC que el organizador puede entregar o vender en el evento.</p>
+          </div>
+        </div>
+        <div class="faq-item reveal">
+          <button class="faq-q" aria-expanded="false">
+            ¿Cómo funciona el QR de medida fija?
+            <span class="faq-icon"></span>
+          </button>
+          <div class="faq-a">
+            <p>Cada escaneo del QR activa el despacho de una medida fija de bebida (por ejemplo 400 ml de chopp) y el cobro se hace directo contra tarjeta de crédito. La canilla se habilita por única vez. Cero registros, cero saldo.</p>
+          </div>
+        </div>
+        <div class="faq-item reveal">
+          <button class="faq-q" aria-expanded="false">
+            ¿Cómo funciona el saldo por mililitros?
+            <span class="faq-icon"></span>
+          </button>
+          <div class="faq-a">
+            <p>El asistente carga saldo en la app (o usa su tarjeta NFC apoyándola en la barra), elige canilla y la canilla despacha por mililitros: cada servicio descuenta del saldo al instante. Ideal para consumo libre, pulseras y eventos de varias horas.</p>
+          </div>
+        </div>
+        <div class="faq-item reveal">
+          <button class="faq-q" aria-expanded="false">
+            ¿Qué medios de pago acepta SERVITE?
+            <span class="faq-icon"></span>
+          </button>
+          <div class="faq-a">
+            <p>Tarjeta de crédito (QR y carga de saldo), tarjetas NFC y saldo de la app. Todo digital: sin efectivo en barra, sin pérdidas y sin errores de vuelto.</p>
+          </div>
+        </div>
+        <div class="faq-item reveal">
+          <button class="faq-q" aria-expanded="false">
+            ¿Qué pasa con el personal de barra?
+            <span class="faq-icon"></span>
+          </button>
+          <div class="faq-a">
+            <p>El personal deja de hacer tareas repetitivas de despacho y pasa a operar el sistema: asistencia a usuarios, entrega de tarjetas NFC, carga de saldo y soporte en el evento. Es clave para que la adopción sea exitosa.</p>
+          </div>
+        </div>
+        <div class="faq-item reveal">
+          <button class="faq-q" aria-expanded="false">
+            ¿Cuánto tarda el registro y la primera carga de saldo?
+            <span class="faq-icon"></span>
+          </button>
+          <div class="faq-a">
+            <p>El objetivo de diseño es que el proceso completo tome menos de 90 segundos. Esa métrica es crítica: en entornos de alta demanda, cuanto más rápido el registro, mayor la conversión.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== CONTACTO ===== -->
+  <section id="contacto">
+    <div class="container container-narrow">
+      <div class="section-header reveal">
+        <span class="section-number">08</span>
+        <div class="section-header-bar"></div>
+      </div>
+      <h2 class="section-title reveal">Sumá SERVITE a tu <span class="accent">próximo evento</span></h2>
+      <p class="section-sub reveal">Dejanos tus datos y te contamos cómo implementarlo.</p>
+
+      <form class="contact-form reveal" id="contactForm">
+        <div class="form-row">
+          <div class="form-field">
+            <label for="nombre">Nombre y apellido</label>
+            <input type="text" id="nombre" name="nombre" placeholder="Tu nombre" required>
+          </div>
+          <div class="form-field">
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" placeholder="tucorreo@ejemplo.com" required>
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="form-field">
+            <label for="empresa">Empresa / evento</label>
+            <input type="text" id="empresa" name="empresa" placeholder="Nombre del local o evento">
+          </div>
+          <div class="form-field">
+            <label for="tipo">Tipo de negocio</label>
+            <select id="tipo" name="tipo">
+              <option value="" selected disabled>Seleccioná una opción</option>
+              <option value="evento">Organizador de eventos</option>
+              <option value="bar">Dueño de bar / local</option>
+              <option value="otro">Otro</option>
+            </select>
+          </div>
+        </div>
+        <div class="form-field">
+          <label for="mensaje">Contanos sobre tu proyecto</label>
+          <textarea id="mensaje" name="mensaje" rows="4" placeholder="¿Qué evento o local tenés en mente?" required></textarea>
+        </div>
+        <button type="submit" class="btn btn-primary btn-block">Enviar consulta</button>
+        <p class="form-status" id="formStatus" role="status"></p>
+      </form>
+
+      <div class="contact-alt reveal">
+        <p>¿Preferís hablar directo?</p>
+        <a href="https://wa.me/5491100000000?text=Hola%20SERVITE%2C%20quiero%20informaci%C3%B3n" class="btn btn-whatsapp" target="_blank" rel="noopener">
+          <span class="wa-icon">&#128172;</span> Escribinos por WhatsApp
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== FOOTER ===== -->
+  <footer>
+    <div class="footer-inner">
+      <img src="img/Logotipo_Negativo.png" alt="SERVITE" class="footer-logo">
+      <p><strong>SERVITE</strong> — Self-Service Beverage System</p>
+      <p class="footer-contact">
+        <a href="mailto:hola@servite.com.ar">hola@servite.com.ar</a>
+        <span>&middot;</span>
+        <a href="https://wa.me/5491100000000" target="_blank" rel="noopener">WhatsApp</a>
+        <span>&middot;</span>
+        <a href="https://instagram.com/servite" target="_blank" rel="noopener">Instagram</a>
+        <span>&middot;</span>
+        <a href="https://linkedin.com/company/servite" target="_blank" rel="noopener">LinkedIn</a>
+      </p>
+      <p class="footer-copy">&copy; <span id="year"></span> SERVITE. Todos los derechos reservados.</p>
+    </div>
+  </footer>
+
+<script src="js/main.js"></script>
+</body>
+</html>
