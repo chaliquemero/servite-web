@@ -351,7 +351,7 @@ section.dark {
   background: rgba(255,255,255,0.03);
   border: 1px solid rgba(255,255,255,0.08);
   border-radius: 18px;
-  padding: 32px 28px;
+  padding: 28px 26px;
 }
 
 .modo-col.qr {
@@ -366,7 +366,7 @@ section.dark {
   display: flex;
   align-items: center;
   gap: 12px;
-  margin-bottom: 24px;
+  margin-bottom: 18px;
 }
 
 .modo-head b {
@@ -391,8 +391,9 @@ section.dark {
   letter-spacing: -0.3px;
 }
 
-.modos-grid .phone-showcase { grid-template-columns: 300px 1fr; gap: 24px; align-items: center; }
-.modos-grid .qr-grid { grid-template-columns: 240px 1fr; gap: 24px; align-items: center; }
+.modos-grid .phone-showcase { grid-template-columns: 260px 1fr; gap: 20px; align-items: center; }
+.modos-grid .phone { width: 250px; }
+.modos-grid .qr-grid { grid-template-columns: 240px 1fr; gap: 20px; align-items: center; }
 
 .modo-col.qr .modo-head b {
   background: rgba(231,76,60,0.15);
@@ -409,7 +410,14 @@ section.dark {
 .modos-grid .qr-step h3 { color: #fff; }
 .modos-grid .qr-step p { color: #8a8a8a; }
 
-.modo-col .nfc-note { max-width: none; margin: 32px 0 0; }
+.modo-col .nfc-note {
+  max-width: none;
+  margin: 24px 0 0;
+  padding: 16px 18px;
+  gap: 16px;
+}
+
+.modo-col .nfc-icon { width: 44px; height: 44px; }
 
 /* ===== PRECIOS ===== */
 .price-grid {
@@ -929,7 +937,7 @@ section.dark {
 .qr-steps {
   display: grid;
   grid-template-columns: 1fr;
-  gap: 14px;
+  gap: 12px;
 }
 
 .qr-step {
@@ -939,7 +947,7 @@ section.dark {
   background: var(--bg-alt);
   border: 1px solid var(--border);
   border-radius: 14px;
-  padding: 18px 20px;
+  padding: 14px 16px;
   transition: transform 0.2s, box-shadow 0.2s;
 }
 
@@ -1172,7 +1180,7 @@ section.dark {
   border-top: 1px solid rgba(255,255,255,0.14);
 }
 
-.msteps { display: flex; flex-direction: column; gap: 12px; }
+.msteps { display: flex; flex-direction: column; gap: 10px; }
 
 .mstep {
   display: flex;
@@ -1181,7 +1189,7 @@ section.dark {
   background: none;
   border: 1px solid transparent;
   border-radius: 14px;
-  padding: 16px 18px;
+  padding: 13px 16px;
   cursor: pointer;
   text-align: left;
   font-family: inherit;
