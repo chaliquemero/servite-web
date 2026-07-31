@@ -377,8 +377,8 @@ section.dark {
   letter-spacing: -0.3px;
 }
 
-.modos-grid .phone-showcase { grid-template-columns: 1fr; gap: 28px; }
-.modos-grid .qr-grid { grid-template-columns: 1fr; gap: 30px; }
+.modos-grid .phone-showcase { gap: 28px; }
+.modos-grid .qr-grid { gap: 30px; align-items: start; }
 
 .modos-grid .qr-step {
   background: rgba(255,255,255,0.04);
