@@ -342,11 +342,25 @@ section.dark {
 .modos-grid {
   display: grid;
   grid-template-columns: 1.15fr 1fr;
-  gap: 64px;
-  align-items: center;
+  gap: 48px;
+  align-items: stretch;
 }
 
-.modo-col { min-width: 0; }
+.modo-col {
+  min-width: 0;
+  background: rgba(255,255,255,0.03);
+  border: 1px solid rgba(255,255,255,0.08);
+  border-radius: 18px;
+  padding: 32px 28px;
+}
+
+.modo-col.qr {
+  background: rgba(231,76,60,0.05);
+  border-color: rgba(231,76,60,0.25);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
 
 .modo-head {
   display: flex;
@@ -377,8 +391,14 @@ section.dark {
   letter-spacing: -0.3px;
 }
 
-.modos-grid .phone-showcase { grid-template-columns: 320px 1fr; gap: 32px; align-items: center; }
-.modos-grid .qr-grid { grid-template-columns: 260px 1fr; gap: 28px; align-items: center; }
+.modos-grid .phone-showcase { grid-template-columns: 300px 1fr; gap: 24px; align-items: center; }
+.modos-grid .qr-grid { grid-template-columns: 240px 1fr; gap: 24px; align-items: center; }
+
+.modo-col.qr .modo-head b {
+  background: rgba(231,76,60,0.15);
+  color: #ff8a80;
+  box-shadow: none;
+}
 
 .modos-grid .qr-step {
   background: rgba(255,255,255,0.04);
@@ -388,6 +408,8 @@ section.dark {
 .modos-grid .qr-step:hover { box-shadow: 0 10px 28px rgba(0,0,0,0.35); }
 .modos-grid .qr-step h3 { color: #fff; }
 .modos-grid .qr-step p { color: #8a8a8a; }
+
+.modo-col .nfc-note { max-width: none; margin: 32px 0 0; }
 
 /* ===== PRECIOS ===== */
 .price-grid {
@@ -1540,7 +1562,7 @@ footer p strong { color: #fff; letter-spacing: 0.5px; }
   .price-card.featured:hover { transform: translateY(-4px); }
   .hero-inner { grid-template-columns: 1fr; gap: 44px; }
   .hero-visual { gap: 24px; }
-  .modos-grid { grid-template-columns: 1fr; gap: 48px; }
+  .modos-grid { grid-template-columns: 1fr; gap: 32px; }
   .modos-grid .phone-showcase { grid-template-columns: 320px 1fr; gap: 44px; }
   .modos-grid .qr-grid { grid-template-columns: 0.9fr 1.1fr; gap: 48px; }
 }
@@ -1628,6 +1650,8 @@ footer p strong { color: #fff; letter-spacing: 0.5px; }
   .mstep p { font-size: 11px; }
   .barra-grid { grid-template-columns: 1fr; gap: 32px; }
   .gal-grid { grid-template-columns: 1fr 1fr; }
+  .modos-grid { gap: 24px; }
+  .modo-col { padding: 26px 20px; }
   .modos-grid .phone-showcase { grid-template-columns: 1fr; gap: 32px; }
   .modos-grid .qr-grid { grid-template-columns: 1fr; gap: 32px; }
 
@@ -1691,6 +1715,7 @@ footer p strong { color: #fff; letter-spacing: 0.5px; }
   .video-note { font-size: 12px; }
 
   .nfc-note { flex-direction: column; text-align: center; padding: 22px 18px; }
+  .modo-col { padding: 20px 16px; }
 
   .contact-alt .btn-whatsapp { width: 100%; }
 
