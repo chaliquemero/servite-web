@@ -21,13 +21,24 @@ servite-web/
 
 ## Fotos de eventos
 
-Copiá las fotos a `img/eventos/` con estos nombres (los placeholders se reemplazan solos):
+Las fotos actuales están en `img/eventos/` y se muestran solas al existir (si un archivo falta, aparece el placeholder). Para reemplazar una, copiá la nueva foto con el mismo nombre:
 
-| Archivo | Dónde se usa |
-|---|---|
-| `hero-evento-01.jpg` | Fondo del hero (opcional) |
-| `barra-01.jpg`, `barra-02.jpg` | Sección "La barra" |
-| `galeria-01.jpg` ... `galeria-04.jpg` | Galería "SERVITE en acción" |
+| Archivo | Dónde se usa | Origen actual |
+|---|---|---|
+| `barra-01.jpg` | Sección "La barra" (tile grande) | Evento 2 (noche cálida) |
+| `barra-02.jpg` | Sección "La barra" (tile chico) | Evento 1 (día) |
+| `galeria-01.jpg` ... `galeria-04.jpg` | Galería "SERVITE en acción" | Eventos 1, 2 y 3 |
+
+Las originales (sin optimizar) están en el Drive: `drive.google.com/drive/folders/1gr6FLVmubC44ICF4zq7lx12E-0c8R4Dc`.
+
+## Video
+
+`img/videos/noche.mp4` (H.264/AAC, compatible con todos los navegadores) se muestra en la galería con poster y botón de play; se reproduce bajo demanda (`preload="none"`, no se descarga hasta que el usuario lo abre).
+
+## Pendientes
+
+- [ ] Reemplazar datos de contacto por los reales: WhatsApp (`5491100000000`), email (`hola@servite.com.ar`), Instagram (`instagram.com/servite`) y LinkedIn (`linkedin.com/company/servite`) en `index.html` y `js/main.js`.
+- [ ] Reemplazar `img/videos/noche.mp4` por una versión comprimida (< 5 MB) cuando haya una herramienta de encoding disponible.
 
 ## Personalizar
 

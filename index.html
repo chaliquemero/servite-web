@@ -338,10 +338,10 @@
       <div class="barra-grid">
         <div class="barra-photos reveal">
           <div class="photo" data-label="Foto — La barra SERVITE en un evento">
-            <img src="img/eventos/barra-01.jpg" alt="La barra SERVITE en acción durante un evento">
+            <img src="img/eventos/barra-01.jpg" alt="La barra SERVITE en acción durante un evento" loading="lazy" decoding="async">
           </div>
           <div class="photo" data-label="Foto — Módulo de canillas inteligentes">
-            <img src="img/eventos/barra-02.jpg" alt="Módulo de canillas inteligentes SERVITE">
+            <img src="img/eventos/barra-02.jpg" alt="Módulo de canillas inteligentes SERVITE" loading="lazy" decoding="async">
           </div>
         </div>
         <div class="reveal">
@@ -373,18 +373,30 @@
 
       <div class="gal-grid">
         <div class="photo reveal" data-label="Foto 01 — Evento en acción">
-          <img src="img/eventos/galeria-01.jpg" alt="Evento con SERVITE en acción">
+          <img src="img/eventos/galeria-01.jpg" alt="Evento con SERVITE en acción" loading="lazy" decoding="async">
         </div>
         <div class="photo reveal" data-label="Foto 02 — Asistentes sirviéndose">
-          <img src="img/eventos/galeria-02.jpg" alt="Asistentes sirviéndose con SERVITE">
+          <img src="img/eventos/galeria-02.jpg" alt="Asistentes sirviéndose con SERVITE" loading="lazy" decoding="async">
         </div>
         <div class="photo reveal" data-label="Foto 03 — La app en el evento">
-          <img src="img/eventos/galeria-03.jpg" alt="Uso de la app SERVITE durante el evento">
+          <img src="img/eventos/galeria-03.jpg" alt="Uso de la app SERVITE durante el evento" loading="lazy" decoding="async">
         </div>
         <div class="photo reveal" data-label="Foto 04 — La barra de noche">
-          <img src="img/eventos/galeria-04.jpg" alt="La barra SERVITE durante la noche">
+          <img src="img/eventos/galeria-04.jpg" alt="La barra SERVITE durante la noche" loading="lazy" decoding="async">
         </div>
       </div>
+
+      <div class="video-feature reveal" id="videoFeature">
+        <video id="nocheVideo" poster="img/eventos/barra-01.jpg" preload="none" playsinline controls>
+          <source src="img/videos/noche.mp4" type="video/mp4">
+        </video>
+        <button class="video-play" id="videoPlay" aria-label="Reproducir video de la barra de noche">
+          <svg width="30" height="30" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+            <path d="M8 5.14v13.72a1 1 0 0 0 1.52.86l11-6.86a1 1 0 0 0 0-1.72l-11-6.86A1 1 0 0 0 8 5.14z"/>
+          </svg>
+        </button>
+      </div>
+      <p class="video-note reveal">La barra SERVITE de noche, en un evento real.</p>
     </div>
   </section>
 

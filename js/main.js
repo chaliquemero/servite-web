@@ -180,6 +180,19 @@
     requestAnimationFrame(frame);
   }
 
+  /* Video de la galería: play/pause con el botón central */
+  var videoEl = document.getElementById('nocheVideo');
+  var videoPlay = document.getElementById('videoPlay');
+  if (videoEl && videoPlay) {
+    videoPlay.addEventListener('click', function () {
+      var p = videoEl.play();
+      if (p && p.catch) p.catch(function () {});
+    });
+    videoEl.addEventListener('play', function () { videoPlay.classList.add('hidden'); });
+    videoEl.addEventListener('pause', function () { videoPlay.classList.remove('hidden'); });
+    videoEl.addEventListener('ended', function () { videoPlay.classList.remove('hidden'); });
+  }
+
   /* Generador del patrón QR (medida fija) */
   var qrEl = document.getElementById('qrPattern');
   if (qrEl) {
