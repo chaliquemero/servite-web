@@ -45,7 +45,7 @@ Las originales (sin optimizar) están en el Drive: `drive.google.com/drive/folde
 - Número de WhatsApp: buscar `5491100000000` en `index.html`
 - Email de contacto: `hola@servite.com.ar` en `index.html` y `js/main.js`
 - Redes sociales (Instagram/LinkedIn): enlaces placeholder en el footer de `index.html`
-- Pantallas del mockup de la app: secciones `.screen` dentro de `#app` en `index.html`
+- Pantallas del mockup de la app: secciones `.screen` dentro de `#modos` en `index.html`
 
 ## Cómo correrla
 

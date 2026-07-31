@@ -92,8 +92,8 @@
     probe.src = img.getAttribute('src');
   });
 
-  /* Slider de la app (solo dentro de #app) */
-  var appEl = document.getElementById('app');
+  /* Slider de la app (solo dentro de #modos) */
+  var appEl = document.getElementById('modos');
   var screens = [];
   var msteps = [];
   var phoneWrap = null;
