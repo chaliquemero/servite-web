@@ -1487,7 +1487,7 @@ footer p strong { color: #fff; letter-spacing: 0.5px; }
   .hero-inner { grid-template-columns: 1fr; gap: 44px; }
   .hero-visual { gap: 24px; }
   .qr-grid { grid-template-columns: 1fr; gap: 36px; }
-  .phone-showcase { grid-template-columns: 1fr; gap: 40px; }
+  .phone-showcase { grid-template-columns: 320px 1fr; gap: 44px; }
 }
 
 @media (max-width: 768px) {
@@ -1541,8 +1541,35 @@ footer p strong { color: #fff; letter-spacing: 0.5px; }
   .form-field select,
   .form-field textarea { font-size: 16px; }
 
-  .phone-showcase { grid-template-columns: 1fr; gap: 40px; }
-  .msteps { max-width: 520px; margin: 0 auto; width: 100%; }
+  .phone-showcase { grid-template-columns: minmax(150px, 42%) 1fr; gap: 20px; align-items: start; }
+  .phone-showcase .phone { width: 100%; max-width: 190px; border-width: 7px; border-radius: 34px; }
+  .phone-notch { width: 62px; height: 15px; top: 8px; border-radius: 10px; }
+  .phone-screen { border-radius: 28px; }
+  .screen { padding: 34px 11px 11px; }
+  .screen-top { margin-bottom: 12px; }
+  .screen-brand img { height: 14px; }
+  .screen-brand span { font-size: 10px; }
+  .screen-saldo { font-size: 8.5px; padding: 3px 8px; }
+  .screen-body { gap: 9px; }
+  .screen h4 { font-size: 13px; }
+  .screen p { font-size: 10px; max-width: 100%; }
+  .screen-icon { width: 56px; height: 56px; }
+  .screen-btn { padding: 8px 14px; font-size: 10.5px; }
+  .serve-ring { width: 86px; height: 86px; }
+  .serve-ring b { font-size: 20px; }
+  .serve-ring span { font-size: 8px; }
+  .chip { padding: 5px 9px; font-size: 9.5px; }
+  .canilla-row { padding: 8px 8px; font-size: 9.5px; }
+  .cr-ml { font-size: 8.5px; }
+  .consumo-row { font-size: 9.5px; padding: 7px 0; }
+  .consumo-total { font-size: 10px; }
+  .ml-readout { font-size: 9.5px; }
+
+  .msteps { max-width: none; margin: 0; width: 100%; gap: 10px; }
+  .mstep { padding: 12px 12px; gap: 10px; }
+  .mstep b { width: 28px; height: 28px; font-size: 11px; }
+  .mstep h4 { font-size: 13px; }
+  .mstep p { font-size: 11px; }
   .barra-grid { grid-template-columns: 1fr; gap: 32px; }
   .gal-grid { grid-template-columns: 1fr 1fr; }
 
@@ -1578,6 +1605,11 @@ footer p strong { color: #fff; letter-spacing: 0.5px; }
   section { padding: 56px 20px; }
   .section-title { font-size: 22px; }
   .section-sub { margin-bottom: 28px; }
+
+  .phone-showcase { grid-template-columns: minmax(130px, 44%) 1fr; gap: 16px; }
+  .phone-showcase .phone { max-width: 165px; }
+  .mstep { padding: 11px 10px; gap: 8px; }
+  .mstep p { font-size: 10.5px; }
 
   .video-play { width: 62px; height: 62px; }
   .video-note { font-size: 12px; }
